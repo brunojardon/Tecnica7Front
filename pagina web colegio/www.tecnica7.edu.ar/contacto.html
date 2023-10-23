@@ -1,0 +1,282 @@
+	<!DOCTYPE html>
+	<html lang="es">
+
+	<!-- Mirrored from www.tecnica7.edu.ar/contacto.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Sep 2023 22:57:02 GMT -->
+	<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+	<link href="../cdn.jsdelivr.net/npm/%40mdi/font%405.x/css/materialdesignicons.min.css" rel="stylesheet">
+	<link href="../cdn.jsdelivr.net/npm/vuetify%402.x/dist/vuetify.min.css" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+		<!-- FAVICON -->
+
+		<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+		<link rel="manifest" href="site.html">
+		<meta name="msapplication-TileColor" content="#2d89ef">
+		<meta name="theme-color" content="#ffffff">
+
+		<!-- FAVICON -->
+
+		<script src="./js/main.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<link rel="stylesheet" type="text/css" href="css/estilo-gral.css">
+		<link rel="stylesheet" type="text/css" href="fonts/fonts.css">
+		<link rel="stylesheet" type="text/css" href="fonts/fonts_gral.css">
+		<link rel="stylesheet" type="text/css" href="css/menu.css">
+		<link rel="stylesheet" href="footer/estilos/footer.css">
+		
+
+		<title>TECNICA 7 'JH'-Contáctenos</title>
+	</head>
+	<body>
+
+		<!-- apertura del tag core -->
+	<template id="app">
+		<v-app>
+			<v-navigation-drawer
+				app
+				v-model="menu"
+				temporary
+				class="text-center white--text"
+			>
+				<template>
+				<v-card
+					width="300"
+					tile
+				>
+					<v-img
+						contain
+						class="mt-n4"
+						:src="cover.srcDefault"
+						height="100px"
+						></v-img>
+					<v-list
+					dense
+						v-for="(item, i) in header.links"
+						:key="i">
+
+					<v-list-item
+						v-if="!item.subItems.length"
+						:href="item.href"
+						link
+					>
+						<v-list-item-icon>
+						<v-icon></v-icon>
+						</v-list-item-icon>
+						<v-list-item-title class="text-left">{{item.texto}}</v-list-item-title>
+					</v-list-item>
+
+					<v-list-group
+						v-else
+						no-action
+						>
+							<template v-slot:activator>
+								<v-list-item-icon>
+									<v-icon></v-icon>
+									</v-list-item-icon>
+								<v-list-item-content>
+								<v-list-item-title class="text-left">{{item.texto}}</v-list-item-title>
+								</v-list-item-content>
+							</template>
+
+							<v-list-item
+								v-for="(subItem, i) in item.subItems"
+										:key="i"
+										:href="subItem.href"
+								link
+							>
+								<v-list-item-title
+									class="text-left"
+									v-text="subItem.texto"></v-list-item-title>
+									<v-list-item-icon>
+										<v-icon></v-icon>
+										</v-list-item-icon>
+							</v-list-item>
+						</v-list-group>
+					</v-list>
+					<v-divider></v-divider>
+					<v-list>
+					<v-list-item dense>
+
+						<v-list-item-content>
+						<v-list-item-title>4201 0621</v-list-item-title>
+						<v-list-item-subtitle>Tel.Fax:</v-list-item-subtitle>
+						</v-list-item-content>
+					</v-list-item>
+
+						<v-divider inset></v-divider>
+
+					<v-list-item dense>
+						<v-list-item-content>
+						<v-list-item-title>eest7avellaneda@abc.gob.ar</v-list-item-title>
+						<v-list-item-subtitle>Email Official</v-list-item-subtitle>
+						</v-list-item-content>
+					</v-list-item>
+
+					<v-divider inset></v-divider>
+					<v-divider inset></v-divider>
+						<v-list-item dense>
+
+						<v-list-item-content>
+						<v-list-item-title>Ing. Marconi 745</v-list-item-title>
+						<v-list-item-subtitle>Buenos Aires, Avellaneda, 1870</v-list-item-subtitle>
+						</v-list-item-content>
+					</v-list-item>
+					</v-list>
+				</v-card>
+				</template>
+			</v-navigation-drawer>
+
+			<!-- src="https://lh5.googleusercontent.com/X0sznMr_c1nthE3eGJGI1f2VaHaZcBgfDNv2opIU--KDfGS6THtVb2ijTTAQGeBmrLzhPLm-hw=w16383" -->
+			<v-app-bar
+				app
+				flat
+				elevate-on-scroll
+				hide-on-scroll
+				:color="header.color"
+				class=" white--text"
+				>
+				<!-- -->
+				<v-app-bar-nav-icon
+					class="hidden-md-and-up"
+					@click.stop="menu = !menu"
+				></v-app-bar-nav-icon>
+
+				<v-toolbar-title>
+					<a :href="docRoot">
+						<v-img
+						:width="$vuetify.breakpoint.smAndDown ? '49' : '65'"
+						:src="logo"
+						></v-img>
+					</a>
+				</v-toolbar-title>
+				<a
+					:href="docRoot"
+					style="color: white;"
+					class="text-decoration-none"
+				>
+					<h1 class="ml-5" v-if="$vuetify.breakpoint.smAndDown">{{title}}</h1>
+				</a>
+				<v-menu
+				v-if="!$vuetify.breakpoint.smAndDown"
+					v-for="(item, i) in header.links"
+					transition="slide-y-transition"
+					bottom
+					offset-y
+					open-on-hover
+				>
+					<template v-slot:activator="{ on }">
+						<v-btn
+							text
+							small
+							:color="header.color"
+							class="lighten-1 white--text caption"
+							v-on="on"
+							:href="item && item.href"
+						>
+							{{ item.texto }}
+						</v-btn>
+					</template>
+						<v-list
+						v-if="item.subItems.length"
+						:color="header.menuColor"
+						>
+							<v-list-item
+							v-for="(subItem, i) in item.subItems"
+							:key="i"
+							:href="subItem && subItem.href"
+							>
+								<v-list-item-content>
+									<v-list-item-title
+									v-text="subItem.texto"
+									class="lighten-1 white--text caption"
+									:color="header.color"
+									>
+									</v-list-item-title>
+								</v-list-item-content>
+							</v-list-item>
+						</v-list>
+				</v-menu>
+			</v-app-bar>
+			<!-- Sizes your content based upon application components -->
+			<v-main>
+				<!-- Provides the application the proper gutter -->
+				<v-container fluid>
+					<v-row>
+						<v-col sm="12" md="12" cols="12">
+						<h1 class="titulo"> Formulario para Consultas</h1><hr class="uno"><br />
+							<v-row align="center" justify="center">
+								<div id="hbspt-form-ee9fb6b5-ee93-4d65-8cd9-a75fa9d2b0e1" class="hbspt-form" data-hs-forms-root="true"><form id="hsForm_58b3e823-39ab-4376-bd4e-89d568291a75" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" novalidate="" action="https://forms.hsforms.com/submissions/v3/public/submit/formsnext/multipart/8039443/58b3e823-39ab-4376-bd4e-89d568291a75" class="hs-form-private hsForm_58b3e823-39ab-4376-bd4e-89d568291a75 hs-form-58b3e823-39ab-4376-bd4e-89d568291a75 hs-form-58b3e823-39ab-4376-bd4e-89d568291a75_ee9fb6b5-ee93-4d65-8cd9-a75fa9d2b0e1 hs-form stacked hs-custom-style" target="target_iframe_58b3e823-39ab-4376-bd4e-89d568291a75" data-instance-id="ee9fb6b5-ee93-4d65-8cd9-a75fa9d2b0e1" data-form-id="58b3e823-39ab-4376-bd4e-89d568291a75" data-portal-id="8039443"><fieldset class="form-columns-1"><div class="hs_email hs-email hs-fieldtype-text field hs-form-field"><label id="label-email-58b3e823-39ab-4376-bd4e-89d568291a75" class="" placeholder="Enter your Correo" for="email-58b3e823-39ab-4376-bd4e-89d568291a75"><span>Correo</span><span class="hs-form-required">*</span></label><legend class="hs-field-desc" style="display: none;"></legend><div class="input"><input id="email-58b3e823-39ab-4376-bd4e-89d568291a75" name="email" required="" placeholder="" type="email" class="hs-input invalid error" inputmode="email" autocomplete="email" value=""></div><ul class="no-list hs-error-msgs inputs-list" role="alert"><li><label class="hs-error-msg hs-main-font-element">Rellene este campo obligatorio.</label></li></ul></div></fieldset><fieldset class="form-columns-2"><div class="hs_lastname hs-lastname hs-fieldtype-text field hs-form-field"><label id="label-lastname-58b3e823-39ab-4376-bd4e-89d568291a75" class="" placeholder="Enter your Apellido" for="lastname-58b3e823-39ab-4376-bd4e-89d568291a75"><span>Apellido</span><span class="hs-form-required">*</span></label><legend class="hs-field-desc" style="display: none;"></legend><div class="input"><input id="lastname-58b3e823-39ab-4376-bd4e-89d568291a75" name="lastname" required="" placeholder="" type="text" class="hs-input" inputmode="text" autocomplete="family-name" value=""></div></div><div class="hs_firstname hs-firstname hs-fieldtype-text field hs-form-field"><label id="label-firstname-58b3e823-39ab-4376-bd4e-89d568291a75" class="" placeholder="Enter your Nombre" for="firstname-58b3e823-39ab-4376-bd4e-89d568291a75"><span>Nombre</span><span class="hs-form-required">*</span></label><legend class="hs-field-desc" style="display: none;"></legend><div class="input"><input id="firstname-58b3e823-39ab-4376-bd4e-89d568291a75" name="firstname" required="" placeholder="" type="text" class="hs-input" inputmode="text" autocomplete="given-name" value=""></div></div></fieldset><fieldset class="form-columns-1"><div class="hs_message hs-message hs-fieldtype-textarea field hs-form-field"><label id="label-message-58b3e823-39ab-4376-bd4e-89d568291a75" class="" placeholder="Enter your Consulta" for="message-58b3e823-39ab-4376-bd4e-89d568291a75"><span>Consulta</span><span class="hs-form-required">*</span></label><legend class="hs-field-desc" style="display: none;"></legend><div class="input"><textarea id="message-58b3e823-39ab-4376-bd4e-89d568291a75" class="hs-input hs-fieldtype-textarea invalid error" name="message" required="" placeholder=""></textarea></div><ul class="no-list hs-error-msgs inputs-list" role="alert"><li><label class="hs-error-msg hs-main-font-element">Rellene este campo obligatorio.</label></li></ul></div></fieldset><div class="hs_recaptcha hs-recaptcha field hs-form-field"><div class="input"></div><input type="hidden" name="g-recaptcha-response" id="hs-recaptcha-response" value=""></div><div class="hs_submit hs-submit"><div class="hs-field-desc" style="display: none;"></div><div class="actions"><input type="submit" class="hs-button primary large" value="Enviar"></div></div><div class="hs-form__virality-link"><iframe aria-label="hubspot-forms-viral-iframe" data-test-id="viral-link-iframe" src="https://app.hubspot.com/embedded-viral-link/forms?lang=es&amp;portalId=8039443&amp;hubs_id=forms-branding-control&amp;hubs_source=&amp;intent=marketingFreeForms" class="EmbeddedViralLink__ViralLinkIframe-q01p2j-0 iUZclL"></iframe></div><input name="hs_context" type="hidden" value="{&quot;embedAtTimestamp&quot;:&quot;1626947107527&quot;,&quot;formDefinitionUpdatedAt&quot;:&quot;1600823453943&quot;,&quot;lang&quot;:&quot;esES&quot;,&quot;embedType&quot;:&quot;REGULAR&quot;,&quot;definitionS3WriteDate&quot;:&quot;1626947107526&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36&quot;,&quot;pageTitle&quot;:&quot;TECNICA 7 'JH'-Contáctenos&quot;,&quot;pageUrl&quot;:&quot;file:///C:/Users/estudiante/Desktop/Mis%20lugares%20Web/pagina%20web%20colegio/www.tecnica7.edu.ar/contacto.html&quot;,&quot;isHubSpotCmsGeneratedPage&quot;:false,&quot;formTarget&quot;:&quot;#hbspt-form-ee9fb6b5-ee93-4d65-8cd9-a75fa9d2b0e1&quot;,&quot;locale&quot;:&quot;es&quot;,&quot;timestamp&quot;:1697742296597,&quot;originalEmbedContext&quot;:{&quot;portalId&quot;:&quot;8039443&quot;,&quot;formId&quot;:&quot;58b3e823-39ab-4376-bd4e-89d568291a75&quot;,&quot;target&quot;:&quot;#hbspt-form-ee9fb6b5-ee93-4d65-8cd9-a75fa9d2b0e1&quot;,&quot;isBuilder&quot;:false,&quot;isTestPage&quot;:false,&quot;isPreview&quot;:false,&quot;isMobileResponsive&quot;:true,&quot;isInsideFrame&quot;:true,&quot;shellId&quot;:0,&quot;pageTitle&quot;:&quot;TECNICA 7 'JH'-Contáctenos&quot;,&quot;pageUrl&quot;:&quot;file:///C:/Users/estudiante/Desktop/Mis%20lugares%20Web/pagina%20web%20colegio/www.tecnica7.edu.ar/contacto.html&quot;,&quot;referrer&quot;:&quot;&quot;},&quot;correlationId&quot;:&quot;ee9fb6b5-ee93-4d65-8cd9-a75fa9d2b0e1&quot;,&quot;renderedFieldsIds&quot;:[&quot;email&quot;,&quot;lastname&quot;,&quot;firstname&quot;,&quot;message&quot;],&quot;captchaStatus&quot;:&quot;LOAD_TIMEOUT&quot;,&quot;emailResubscribeStatus&quot;:&quot;NOT_APPLICABLE&quot;,&quot;isInsideCrossOriginFrame&quot;:false,&quot;source&quot;:&quot;forms-embed-1.3775&quot;,&quot;sourceName&quot;:&quot;forms-embed&quot;,&quot;sourceVersion&quot;:&quot;1.3775&quot;,&quot;sourceVersionMajor&quot;:&quot;1&quot;,&quot;sourceVersionMinor&quot;:&quot;3775&quot;,&quot;_debug_allPageIds&quot;:{},&quot;_debug_embedLogLines&quot;:[{&quot;clientTimestamp&quot;:1697741388886,&quot;level&quot;:&quot;INFO&quot;,&quot;message&quot;:&quot;Retrieved pageContext values which may be overriden by the embed context: {\&quot;pageTitle\&quot;:\&quot;TECNICA 7 'JH'-Contáctenos\&quot;,\&quot;pageUrl\&quot;:\&quot;file:///C:/Users/estudiante/Desktop/Mis%20lugares%20Web/pagina%20web%20colegio/www.tecnica7.edu.ar/contacto.html\&quot;,\&quot;userAgent\&quot;:\&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36\&quot;,\&quot;isHubSpotCmsGeneratedPage\&quot;:false}&quot;},{&quot;clientTimestamp&quot;:1697741388889,&quot;level&quot;:&quot;INFO&quot;,&quot;message&quot;:&quot;Retrieved countryCode property from normalized embed definition response: \&quot;US\&quot;&quot;}]}"><iframe name="target_iframe_58b3e823-39ab-4376-bd4e-89d568291a75" style="display: none;"></iframe></form></div>
+								
+							</v-row> 
+						</v-col>
+					</v-row>
+					
+				</v-container>
+			</v-main>
+	<template>
+		<v-footer
+		app
+		:color="footer.color"
+		class="mt-10"
+		padless
+		absolute
+		>
+		<v-row
+			justify="center"
+			no-gutters
+		>
+			<v-btn
+			v-for="(link, key) in footer.links"
+			:key="key"
+			:href="link.href"
+			color="white"
+			text
+			rounded
+			class="my-2"
+			>
+			{{ link.texto }}
+			</v-btn>
+			<v-col
+			class="indigo accent-2 text-center white--text"
+			cols="12"
+			>
+			Email Official: eest7avellaneda@abc.gob.ar | Tel.Fax: 4201 0621 | Ing. Marconi 745, Buenos Aires, Avellaneda, 1870
+			</v-col>
+			<v-col
+			class="indigo accent-3 text-center white--text"
+			cols="12"
+			>
+			{{ new Date().getFullYear() }} — <strong>Técnica n°7, José Hernández</strong>
+			</v-col>
+		</v-row>
+		</v-footer>
+	</template>
+	<!-- cierre del tag core -->
+	</v-app>
+	</template>
+	<script charset="utf-8" type="text/javascript" src="../js.hsforms.net/forms/shell.js"></script>
+	<script src="js/jquery.js" ></script>
+	<script src="js/main.js" ></script>
+	<script src="../cdn.jsdelivr.net/npm/vue%402.x/dist/vue.min.js"></script>
+	<script src="../cdn.jsdelivr.net/npm/vuetify%402.x/dist/vuetify.min.js"></script>
+	<script src="js/core12072023v1.js" ></script>
+	<script>
+		'use strict';
+		(function(){
+			hbspt.forms.create({
+				portalId: "8039443",
+				formId: "58b3e823-39ab-4376-bd4e-89d568291a75",
+				target: "#contact"
+			});
+		})();
+	</script>
+	</body>
+
+	<!-- Mirrored from www.tecnica7.edu.ar/contacto.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Sep 2023 22:57:10 GMT -->
+	</html>

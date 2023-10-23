@@ -1,0 +1,56 @@
+/* Estilos para el formulario de retiro */
+#retiro {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#retiro h2 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+#retiro form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#retiro label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#retiro input[type="text"],
+#retiro input[type="email"],
+#retiro textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#retiro textarea {
+    height: 100px;
+}
+
+#retiro input{
+    background-color: #0056b3;
+}
+
+#retiro input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#retiro input[type="submit"]:hover {
+    background-color: #0056b3;
+}
